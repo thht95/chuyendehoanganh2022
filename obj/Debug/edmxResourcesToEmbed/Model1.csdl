@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLDRLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CVHT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Gioitinh" Type="Boolean" />
+    <Property Name="Diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Lops" Relationship="Self.FK_Lop_User" FromRole="CVHT" ToRole="Lop" />
+  </EntityType>
+  <EntityType Name="Danhgia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SinhvienID" Type="Int32" />
+    <Property Name="TieuchiID" Type="Int32" />
+    <Property Name="Diemdanhgia" Type="Int32" />
+    <Property Name="Ngaydanhgia" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Sinhvien" Relationship="Self.FK_Danhgia_Sinhvien" FromRole="Danhgia" ToRole="Sinhvien" />
+    <NavigationProperty Name="Tieuchi" Relationship="Self.FK_Danhgia_Tieuchi" FromRole="Danhgia" ToRole="Tieuchi" />
+  </EntityType>
+  <EntityType Name="Lop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GVCN_ID" Type="Int32" />
+    <NavigationProperty Name="CVHT" Relationship="Self.FK_Lop_User" FromRole="Lop" ToRole="CVHT" />
+    <NavigationProperty Name="Sinhviens" Relationship="Self.FK_Student_Lop" FromRole="Lop" ToRole="Sinhvien" />
+  </EntityType>
+  <EntityType Name="Sinhvien">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
+    <Property Name="Gioitinh" Type="Boolean" />
+    <Property Name="LopID" Type="Int32" />
+    <NavigationProperty Name="Danhgias" Relationship="Self.FK_Danhgia_Sinhvien" FromRole="Sinhvien" ToRole="Danhgia" />
+    <NavigationProperty Name="Lop" Relationship="Self.FK_Student_Lop" FromRole="Sinhvien" ToRole="Lop" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tieuchi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Noidung" Type="Int32" />
+    <Property Name="Sodiem" Type="Int32" />
+    <NavigationProperty Name="Danhgias" Relationship="Self.FK_Danhgia_Tieuchi" FromRole="Tieuchi" ToRole="Danhgia" />
+  </EntityType>
+  <Association Name="FK_Lop_User">
+    <End Role="CVHT" Type="Self.CVHT" Multiplicity="0..1" />
+    <End Role="Lop" Type="Self.Lop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CVHT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Lop">
+        <PropertyRef Name="GVCN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Danhgia_Sinhvien">
+    <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="0..1" />
+    <End Role="Danhgia" Type="Self.Danhgia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sinhvien">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Danhgia">
+        <PropertyRef Name="SinhvienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Danhgia_Tieuchi">
+    <End Role="Tieuchi" Type="Self.Tieuchi" Multiplicity="0..1" />
+    <End Role="Danhgia" Type="Self.Danhgia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tieuchi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Danhgia">
+        <PropertyRef Name="TieuchiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Lop">
+    <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+    <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lop">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sinhvien">
+        <PropertyRef Name="LopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLDRLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CVHTs" EntityType="Self.CVHT" />
+    <EntitySet Name="Danhgias" EntityType="Self.Danhgia" />
+    <EntitySet Name="Lops" EntityType="Self.Lop" />
+    <EntitySet Name="Sinhviens" EntityType="Self.Sinhvien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tieuchis" EntityType="Self.Tieuchi" />
+    <AssociationSet Name="FK_Lop_User" Association="Self.FK_Lop_User">
+      <End Role="CVHT" EntitySet="CVHTs" />
+      <End Role="Lop" EntitySet="Lops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Danhgia_Sinhvien" Association="Self.FK_Danhgia_Sinhvien">
+      <End Role="Sinhvien" EntitySet="Sinhviens" />
+      <End Role="Danhgia" EntitySet="Danhgias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Danhgia_Tieuchi" Association="Self.FK_Danhgia_Tieuchi">
+      <End Role="Tieuchi" EntitySet="Tieuchis" />
+      <End Role="Danhgia" EntitySet="Danhgias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Lop" Association="Self.FK_Student_Lop">
+      <End Role="Lop" EntitySet="Lops" />
+      <End Role="Sinhvien" EntitySet="Sinhviens" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QLDRLModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QLDRLModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

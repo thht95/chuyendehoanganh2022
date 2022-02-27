@@ -1,0 +1,14 @@
+D:\Projects\Chuyende\QLDRL\QLDRL\bin\Debug\QLDRL.exe.config
+D:\Projects\Chuyende\QLDRL\QLDRL\bin\Debug\QLDRL.exe
+D:\Projects\Chuyende\QLDRL\QLDRL\bin\Debug\QLDRL.pdb
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.csproj.AssemblyReference.cache
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.Dangnhap.resources
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.Properties.Resources.resources
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.csproj.GenerateResource.cache
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.csproj.CoreCompileInputs.cache
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.exe
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.pdb
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.MainForm.resources
+D:\Projects\Chuyende\QLDRL\QLDRL\bin\Debug\EntityFramework.dll
+D:\Projects\Chuyende\QLDRL\QLDRL\bin\Debug\EntityFramework.xml
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.csproj.CopyComplete
