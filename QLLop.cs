@@ -34,12 +34,10 @@ namespace QLDRL
                 if(MainForm.isAdmin)
                 {
                     lop.GVCN_ID = Convert.ToInt32(cbbGVCN.SelectedValue);
-                    MessageBox.Show(lop.GVCN_ID.ToString());
                 }
                 else
                 {
                     lop.GVCN_ID = MainForm.id;
-                    MessageBox.Show(lop.GVCN_ID.ToString());
                 }
                 lop.Ten = txtTen.Text;
 
