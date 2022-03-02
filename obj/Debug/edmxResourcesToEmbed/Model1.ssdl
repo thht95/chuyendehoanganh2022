@@ -39,7 +39,7 @@
     <Property Name="Ten" Type="nvarchar" MaxLength="100" />
     <Property Name="Ngaysinh" Type="datetime" />
     <Property Name="Gioitinh" Type="bit" />
-    <Property Name="LopID" Type="int" />
+    <Property Name="LopID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -96,7 +96,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Student_Lop">
-    <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+    <End Role="Lop" Type="Self.Lop" Multiplicity="1" />
     <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Lop">

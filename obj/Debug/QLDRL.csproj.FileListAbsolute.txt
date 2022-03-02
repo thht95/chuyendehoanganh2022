@@ -14,3 +14,4 @@ D:\Projects\Chuyende\QLDRL\QLDRL\bin\Debug\EntityFramework.xml
 D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.DoiMatKhau.resources
 D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.QLLop.resources
 D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.QLTaikhoan.resources
+D:\Projects\Chuyende\QLDRL\QLDRL\obj\Debug\QLDRL.QLSinhvien.resources

@@ -23,7 +23,7 @@ namespace QLDRL
         public string Ten { get; set; }
         public Nullable<System.DateTime> Ngaysinh { get; set; }
         public Nullable<bool> Gioitinh { get; set; }
-        public Nullable<int> LopID { get; set; }
+        public int LopID { get; set; }
     
         public virtual ICollection<Danhgia> Danhgias { get; set; }
         public virtual Lop Lop { get; set; }

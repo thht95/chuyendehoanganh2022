@@ -44,7 +44,7 @@
           <Property Name="Ten" Type="nvarchar" MaxLength="100" />
           <Property Name="Ngaysinh" Type="datetime" />
           <Property Name="Gioitinh" Type="bit" />
-          <Property Name="LopID" Type="int" />
+          <Property Name="LopID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -101,7 +101,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Student_Lop">
-          <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+          <End Role="Lop" Type="Self.Lop" Multiplicity="1" />
           <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lop">
@@ -215,7 +215,7 @@
           <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
           <Property Name="Gioitinh" Type="Boolean" />
-          <Property Name="LopID" Type="Int32" />
+          <Property Name="LopID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Danhgias" Relationship="Self.FK_Danhgia_Sinhvien" FromRole="Sinhvien" ToRole="Danhgia" />
           <NavigationProperty Name="Lop" Relationship="Self.FK_Student_Lop" FromRole="Sinhvien" ToRole="Lop" />
         </EntityType>
@@ -275,7 +275,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Student_Lop">
-          <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+          <End Role="Lop" Type="Self.Lop" Multiplicity="1" />
           <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lop">

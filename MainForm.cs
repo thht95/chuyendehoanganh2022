@@ -56,5 +56,21 @@ namespace QLDRL
         {
             quảnLýTàiKhoảnToolStripMenuItem.Visible = isAdmin;
         }
+
+        private void quảnLýSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLSinhvien qlSinhvien = new QLSinhvien();
+            qlSinhvien.MdiParent = this;
+            qlSinhvien.Show();
+        }
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                QLSinhvien qLTaikhoan = new QLSinhvien();
+                qLTaikhoan.MdiParent = this;
+                qLTaikhoan.Show();
+            }
+        }
     }
 }

@@ -57,6 +57,10 @@ namespace QLDRL
                 int id = Convert.ToInt32(lblID.Text);
                 Lop lop = context.Lops.FirstOrDefault(x => x.ID == id);
                 lop.Ten = txtTen.Text;
+                if (MainForm.isAdmin)
+                {
+                    lop.GVCN_ID = Convert.ToInt32(cbbGVCN.SelectedValue);
+                }
 
                 context.SaveChanges();
                 reload();
@@ -119,16 +123,6 @@ namespace QLDRL
             }
         }
 
-        private void QLLop_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTimkiem_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtTimkiem_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -140,7 +134,15 @@ namespace QLDRL
                 }
                 else
                 {
-                    dgv.DataSource = context.Lops.Where(x => x.GVCN_ID == MainForm.id && (x.Ten.Contains(timkiem))).ToList();
+                    if (MainForm.isAdmin)
+                    {
+                        dgv.DataSource = context.Lops.Where(x => x.Ten.Contains(timkiem)).ToList();
+                    }
+                    else
+                    {
+                        dgv.DataSource = context.Lops.Where(x => x.GVCN_ID == MainForm.id && (x.Ten.Contains(timkiem))).ToList();
+                    }
+
                 }
             }
         }
@@ -151,6 +153,7 @@ namespace QLDRL
             {
                 lblID.Text = dgv[0, e.RowIndex].Value.ToString();
                 txtTen.Text = dgv[1, e.RowIndex].Value.ToString();
+                cbbGVCN.SelectedValue = dgv[2, e.RowIndex].Value;
             }
         }
 
@@ -160,7 +163,8 @@ namespace QLDRL
             {
                 int id = Convert.ToInt32(e.Value);
                 var cvht = context.CVHTs.FirstOrDefault(x => x.ID == id);
-                e.Value = cvht.Ten;
+                if (cvht != null)
+                    e.Value = cvht.Ten;
             }
         }
     }

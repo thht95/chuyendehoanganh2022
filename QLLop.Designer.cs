@@ -128,7 +128,6 @@ namespace QLDRL
             this.txtTimkiem.Size = new System.Drawing.Size(344, 20);
             this.txtTimkiem.TabIndex = 6;
             this.txtTimkiem.Text = "Tìm kiếm";
-            this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
             this.txtTimkiem.Enter += new System.EventHandler(this.txtTimkiem_Enter);
             this.txtTimkiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTimkiem_KeyUp);
             this.txtTimkiem.Leave += new System.EventHandler(this.txtTimkiem_Leave);
@@ -140,11 +139,11 @@ namespace QLDRL
             this.txtTen.Size = new System.Drawing.Size(100, 20);
             this.txtTen.TabIndex = 7;
             // 
-            // comboBox1
+            // cbbGVCN
             // 
             this.cbbGVCN.FormattingEnabled = true;
             this.cbbGVCN.Location = new System.Drawing.Point(111, 111);
-            this.cbbGVCN.Name = "comboBox1";
+            this.cbbGVCN.Name = "cbbGVCN";
             this.cbbGVCN.Size = new System.Drawing.Size(100, 21);
             this.cbbGVCN.TabIndex = 8;
             // 
@@ -196,7 +195,6 @@ namespace QLDRL
             this.Controls.Add(this.dgv);
             this.Name = "QLLop";
             this.Text = "Quản lý lớp";
-            this.Load += new System.EventHandler(this.QLLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

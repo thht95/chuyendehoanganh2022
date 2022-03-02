@@ -50,17 +50,18 @@ namespace QLDRL
             this.label4 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbtnNotAdmin = new System.Windows.Forms.RadioButton();
             this.rbtnIsAdmin = new System.Windows.Forms.RadioButton();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -98,7 +99,7 @@ namespace QLDRL
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(148, 102);
+            this.txtTen.Location = new System.Drawing.Point(148, 94);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(100, 20);
             this.txtTen.TabIndex = 15;
@@ -106,7 +107,7 @@ namespace QLDRL
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(99, 101);
+            this.label3.Location = new System.Drawing.Point(99, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 14;
@@ -115,7 +116,7 @@ namespace QLDRL
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 61);
+            this.label1.Location = new System.Drawing.Point(107, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 13;
@@ -131,6 +132,7 @@ namespace QLDRL
             this.Column2,
             this.Column3,
             this.Column4,
+            this.Column7,
             this.Gioitinh,
             this.Column5,
             this.Column6});
@@ -138,7 +140,7 @@ namespace QLDRL
             this.dgv.Location = new System.Drawing.Point(0, 264);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
-            this.dgv.Size = new System.Drawing.Size(745, 217);
+            this.dgv.Size = new System.Drawing.Size(744, 217);
             this.dgv.TabIndex = 12;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             this.dgv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_CellFormatting);
@@ -146,7 +148,7 @@ namespace QLDRL
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 146);
+            this.label2.Location = new System.Drawing.Point(55, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 19;
@@ -155,14 +157,14 @@ namespace QLDRL
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(145, 61);
+            this.lblID.Location = new System.Drawing.Point(145, 53);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 13);
             this.lblID.TabIndex = 20;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(148, 143);
+            this.txtSDT.Location = new System.Drawing.Point(148, 135);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(100, 20);
             this.txtSDT.TabIndex = 21;
@@ -227,7 +229,7 @@ namespace QLDRL
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(85, 185);
+            this.label7.Location = new System.Drawing.Point(85, 177);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 27;
@@ -235,7 +237,7 @@ namespace QLDRL
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(148, 182);
+            this.txtDiachi.Location = new System.Drawing.Point(148, 174);
             this.txtDiachi.Multiline = true;
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(168, 45);
@@ -265,55 +267,9 @@ namespace QLDRL
             this.txtTimkiem.Size = new System.Drawing.Size(745, 20);
             this.txtTimkiem.TabIndex = 31;
             this.txtTimkiem.Text = " Tìm kiếm";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Ten";
-            this.Column2.HeaderText = "Tên";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "SDT";
-            this.Column3.HeaderText = "Số điện thoại";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Username";
-            this.Column4.HeaderText = "Username";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Gioitinh
-            // 
-            this.Gioitinh.DataPropertyName = "Gioitinh";
-            this.Gioitinh.HeaderText = "Giới tính";
-            this.Gioitinh.Name = "Gioitinh";
-            this.Gioitinh.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Diachi";
-            this.Column5.HeaderText = "Địa chỉ";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Admin";
-            this.Column6.HeaderText = "Admin";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.txtTimkiem.Enter += new System.EventHandler(this.txtTimkiem_Enter);
+            this.txtTimkiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTimkiem_KeyUp);
+            this.txtTimkiem.Leave += new System.EventHandler(this.txtTimkiem_Leave);
             // 
             // label8
             // 
@@ -356,11 +312,67 @@ namespace QLDRL
             this.rbtnIsAdmin.Text = "Yes";
             this.rbtnIsAdmin.UseVisualStyleBackColor = true;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ten";
+            this.Column2.HeaderText = "Tên";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SDT";
+            this.Column3.HeaderText = "Số điện thoại";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Username";
+            this.Column4.HeaderText = "Username";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Password";
+            this.Column7.HeaderText = "Password";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Gioitinh
+            // 
+            this.Gioitinh.DataPropertyName = "Gioitinh";
+            this.Gioitinh.HeaderText = "Giới tính";
+            this.Gioitinh.Name = "Gioitinh";
+            this.Gioitinh.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Diachi";
+            this.Column5.HeaderText = "Địa chỉ";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Admin";
+            this.Column6.HeaderText = "Admin";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // QLTaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 481);
+            this.ClientSize = new System.Drawing.Size(744, 481);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTimkiem);
@@ -383,7 +395,7 @@ namespace QLDRL
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv);
             this.Name = "QLTaikhoan";
-            this.Text = "Quản lý tài khoản";
+            this.Text = "Quản lý CVHT";
             this.Load += new System.EventHandler(this.QLTaikhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -418,16 +430,17 @@ namespace QLDRL
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtTimkiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gioitinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbtnNotAdmin;
         private System.Windows.Forms.RadioButton rbtnIsAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gioitinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
