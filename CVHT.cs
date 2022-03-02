@@ -26,6 +26,7 @@ namespace QLDRL
         public string Password { get; set; }
         public Nullable<bool> Gioitinh { get; set; }
         public string Diachi { get; set; }
+        public Nullable<bool> Admin { get; set; }
     
         public virtual ICollection<Lop> Lops { get; set; }
     }

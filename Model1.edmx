@@ -4,24 +4,25 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLDRLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLDRLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CVHT">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="100" />
           <Property Name="SDT" Type="nvarchar" MaxLength="100" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" />
           <Property Name="Gioitinh" Type="bit" />
           <Property Name="Diachi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Admin" Type="bit" />
         </EntityType>
         <EntityType Name="Danhgia">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SinhvienID" Type="int" />
           <Property Name="TieuchiID" Type="int" />
           <Property Name="Diemdanhgia" Type="int" />
@@ -31,7 +32,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="100" />
           <Property Name="GVCN_ID" Type="int" />
         </EntityType>
@@ -39,7 +40,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="100" />
           <Property Name="Ngaysinh" Type="datetime" />
           <Property Name="Gioitinh" Type="bit" />
@@ -59,7 +60,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Noidung" Type="int" />
           <Property Name="Sodiem" Type="int" />
         </EntityType>
@@ -166,8 +167,7 @@
             <End Role="Sinhvien" EntitySet="Sinhvien" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLDRLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -183,6 +183,7 @@
           <Property Name="Gioitinh" Type="Boolean" />
           <Property Name="Diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Lops" Relationship="Self.FK_Lop_User" FromRole="CVHT" ToRole="Lop" />
+          <Property Name="Admin" Type="Boolean" />
         </EntityType>
         <EntityType Name="Danhgia">
           <Key>
@@ -359,6 +360,7 @@
           <EntitySetMapping Name="CVHTs">
             <EntityTypeMapping TypeName="QLDRLModel.CVHT">
               <MappingFragment StoreEntitySet="CVHT">
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />

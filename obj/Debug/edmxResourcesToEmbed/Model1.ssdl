@@ -4,19 +4,20 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="100" />
     <Property Name="SDT" Type="nvarchar" MaxLength="100" />
     <Property Name="Username" Type="nvarchar" MaxLength="100" />
     <Property Name="Password" Type="nvarchar" MaxLength="100" />
     <Property Name="Gioitinh" Type="bit" />
     <Property Name="Diachi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Admin" Type="bit" />
   </EntityType>
   <EntityType Name="Danhgia">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SinhvienID" Type="int" />
     <Property Name="TieuchiID" Type="int" />
     <Property Name="Diemdanhgia" Type="int" />
@@ -26,7 +27,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="100" />
     <Property Name="GVCN_ID" Type="int" />
   </EntityType>
@@ -34,7 +35,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="100" />
     <Property Name="Ngaysinh" Type="datetime" />
     <Property Name="Gioitinh" Type="bit" />
@@ -54,7 +55,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Noidung" Type="int" />
     <Property Name="Sodiem" Type="int" />
   </EntityType>

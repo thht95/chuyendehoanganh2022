@@ -12,6 +12,8 @@ namespace QLDRL
 {
     public partial class MainForm : Form
     {
+        public static int id = 1;
+        public static bool isAdmin = true;
         public MainForm()
         {
             InitializeComponent();
@@ -20,6 +22,39 @@ namespace QLDRL
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau doiMatKhau = new DoiMatKhau();
+            doiMatKhau.MdiParent = this;
+            doiMatKhau.Show();
+        }
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = Application.OpenForms["Dangnhap"];
+            form.Show();
+        }
+
+        private void quảnLýLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLLop qLLop = new QLLop();
+            qLLop.MdiParent = this;
+            qLLop.Show();
+        }
+
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLTaikhoan qLTaikhoan = new QLTaikhoan();
+            qLTaikhoan.MdiParent = this;
+            qLTaikhoan.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            quảnLýTàiKhoảnToolStripMenuItem.Visible = isAdmin;
         }
     }
 }

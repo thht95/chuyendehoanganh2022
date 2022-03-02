@@ -21,27 +21,45 @@ namespace QLDRL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text == "admin" && txtPassword.Text == "1")
+            var cvht = context.CVHTs.FirstOrDefault(x => x.Password == txtPassword.Text && x.Username == txtUsername.Text);
+            if(cvht != null)
             {
-                //Success
                 this.Hide();
                 MainForm mainForm = new MainForm();
+                MainForm.id = cvht.ID;
+                MainForm.isAdmin = cvht.Admin == true;
                 mainForm.Show();
+                txtPassword.Text = txtUsername.Text = "";
             }
             else
             {
-                var cvht = context.CVHTs.FirstOrDefault(x => x.Password == txtPassword.Text && x.Username == txtUsername.Text);
-                if(cvht != null)
-                {
-                    this.Hide();
-                    MainForm mainForm = new MainForm();
-                    mainForm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Đăng nhập thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
+                MessageBox.Show("Đăng nhập thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dangnhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

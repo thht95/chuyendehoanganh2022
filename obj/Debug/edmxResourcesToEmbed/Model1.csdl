@@ -12,6 +12,7 @@
     <Property Name="Gioitinh" Type="Boolean" />
     <Property Name="Diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Lops" Relationship="Self.FK_Lop_User" FromRole="CVHT" ToRole="Lop" />
+    <Property Name="Admin" Type="Boolean" />
   </EntityType>
   <EntityType Name="Danhgia">
     <Key>
