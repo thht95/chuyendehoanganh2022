@@ -56,7 +56,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Noidung" Type="int" />
+    <Property Name="Noidung" Type="nvarchar" MaxLength="50" />
     <Property Name="Sodiem" Type="int" />
   </EntityType>
   <Association Name="FK_Danhgia_Sinhvien">

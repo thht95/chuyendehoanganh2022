@@ -20,7 +20,7 @@ namespace QLDRL
         }
     
         public int ID { get; set; }
-        public Nullable<int> Noidung { get; set; }
+        public string Noidung { get; set; }
         public Nullable<int> Sodiem { get; set; }
     
         public virtual ICollection<Danhgia> Danhgias { get; set; }

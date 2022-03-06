@@ -10,11 +10,11 @@
         <EntityTypeShape EntityType="QLDRLModel.Lop" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLDRLModel.Sinhvien" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="QLDRLModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLDRLModel.Tieuchi" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="QLDRLModel.FK_Lop_User" ManuallyRouted="false" />
         <AssociationConnector Association="QLDRLModel.FK_Danhgia_Sinhvien" ManuallyRouted="false" />
-        <AssociationConnector Association="QLDRLModel.FK_Danhgia_Tieuchi" ManuallyRouted="false" />
         <AssociationConnector Association="QLDRLModel.FK_Student_Lop" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLDRLModel.Tieuchi" Width="1.5" PointX="3.375" PointY="4.875" />
+        <AssociationConnector Association="QLDRLModel.FK_Danhgia_Tieuchi" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

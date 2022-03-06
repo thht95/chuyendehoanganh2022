@@ -67,10 +67,24 @@ namespace QLDRL
         {
             if (e.KeyCode == Keys.F1)
             {
-                QLSinhvien qLTaikhoan = new QLSinhvien();
-                qLTaikhoan.MdiParent = this;
-                qLTaikhoan.Show();
+                QLBanDanhgia form = new QLBanDanhgia();
+                form.MdiParent = this;
+                form.Show();
             }
+        }
+
+        private void phiếuĐánhGiáToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLPhieuDanhgia form = new QLPhieuDanhgia();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void danhSáchTiêuChíToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLBanDanhgia form = new QLBanDanhgia();
+            form.MdiParent = this;
+            form.Show();
         }
     }
 }

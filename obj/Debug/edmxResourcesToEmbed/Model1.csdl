@@ -24,7 +24,7 @@
     <Property Name="Diemdanhgia" Type="Int32" />
     <Property Name="Ngaydanhgia" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Sinhvien" Relationship="Self.FK_Danhgia_Sinhvien" FromRole="Danhgia" ToRole="Sinhvien" />
-    <NavigationProperty Name="Tieuchi" Relationship="Self.FK_Danhgia_Tieuchi" FromRole="Danhgia" ToRole="Tieuchi" />
+    <NavigationProperty Name="Tieuchi" Relationship="QLDRLModel.FK_Danhgia_Tieuchi" FromRole="Danhgia" ToRole="Tieuchi" />
   </EntityType>
   <EntityType Name="Lop">
     <Key>
@@ -58,15 +58,6 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="Tieuchi">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Noidung" Type="Int32" />
-    <Property Name="Sodiem" Type="Int32" />
-    <NavigationProperty Name="Danhgias" Relationship="Self.FK_Danhgia_Tieuchi" FromRole="Tieuchi" ToRole="Danhgia" />
-  </EntityType>
   <Association Name="FK_Lop_User">
     <End Role="CVHT" Type="Self.CVHT" Multiplicity="0..1" />
     <End Role="Lop" Type="Self.Lop" Multiplicity="*" />
@@ -91,18 +82,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Danhgia_Tieuchi">
-    <End Role="Tieuchi" Type="Self.Tieuchi" Multiplicity="0..1" />
-    <End Role="Danhgia" Type="Self.Danhgia" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tieuchi">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Danhgia">
-        <PropertyRef Name="TieuchiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Student_Lop">
     <End Role="Lop" Type="Self.Lop" Multiplicity="1" />
     <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="*" />
@@ -121,17 +100,12 @@
     <EntitySet Name="Lops" EntityType="Self.Lop" />
     <EntitySet Name="Sinhviens" EntityType="Self.Sinhvien" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Tieuchis" EntityType="Self.Tieuchi" />
     <AssociationSet Name="FK_Lop_User" Association="Self.FK_Lop_User">
       <End Role="CVHT" EntitySet="CVHTs" />
       <End Role="Lop" EntitySet="Lops" />
     </AssociationSet>
     <AssociationSet Name="FK_Danhgia_Sinhvien" Association="Self.FK_Danhgia_Sinhvien">
       <End Role="Sinhvien" EntitySet="Sinhviens" />
-      <End Role="Danhgia" EntitySet="Danhgias" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Danhgia_Tieuchi" Association="Self.FK_Danhgia_Tieuchi">
-      <End Role="Tieuchi" EntitySet="Tieuchis" />
       <End Role="Danhgia" EntitySet="Danhgias" />
     </AssociationSet>
     <AssociationSet Name="FK_Student_Lop" Association="Self.FK_Student_Lop">
@@ -168,6 +142,11 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Tieuchis" EntityType="QLDRLModel.Tieuchi" />
+    <AssociationSet Name="FK_Danhgia_Tieuchi" Association="QLDRLModel.FK_Danhgia_Tieuchi">
+      <End Role="Tieuchi" EntitySet="Tieuchis" />
+      <End Role="Danhgia" EntitySet="Danhgias" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -180,4 +159,25 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Tieuchi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Noidung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sodiem" Type="Int32" />
+    <NavigationProperty Name="Danhgias" Relationship="QLDRLModel.FK_Danhgia_Tieuchi" FromRole="Tieuchi" ToRole="Danhgia" />
+  </EntityType>
+  <Association Name="FK_Danhgia_Tieuchi">
+    <End Type="QLDRLModel.Tieuchi" Role="Tieuchi" Multiplicity="0..1" />
+    <End Type="QLDRLModel.Danhgia" Role="Danhgia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tieuchi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Danhgia">
+        <PropertyRef Name="TieuchiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
