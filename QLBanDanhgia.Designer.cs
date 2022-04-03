@@ -45,6 +45,7 @@ namespace QLDRL
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,12 +58,13 @@ namespace QLDRL
             this.Column1,
             this.Column2,
             this.Column4,
-            this.Column3});
+            this.Column3,
+            this.Column5});
             this.dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv.Location = new System.Drawing.Point(0, 209);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
-            this.dgv.Size = new System.Drawing.Size(444, 241);
+            this.dgv.Size = new System.Drawing.Size(543, 241);
             this.dgv.TabIndex = 77;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             this.dgv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_CellFormatting);
@@ -93,9 +95,9 @@ namespace QLDRL
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(321, 144);
+            this.btnXoa.Location = new System.Drawing.Point(383, 144);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(63, 39);
+            this.btnXoa.Size = new System.Drawing.Size(82, 39);
             this.btnXoa.TabIndex = 73;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -103,9 +105,9 @@ namespace QLDRL
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(321, 87);
+            this.btnSua.Location = new System.Drawing.Point(383, 87);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(63, 39);
+            this.btnSua.Size = new System.Drawing.Size(82, 39);
             this.btnSua.TabIndex = 72;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -113,9 +115,9 @@ namespace QLDRL
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(321, 30);
+            this.btnThem.Location = new System.Drawing.Point(383, 30);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(63, 39);
+            this.btnThem.Size = new System.Drawing.Size(82, 39);
             this.btnThem.TabIndex = 71;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -194,11 +196,18 @@ namespace QLDRL
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Ngaydanhgia";
+            this.Column5.HeaderText = "Thời gian đánh giá";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // QLBanDanhgia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 450);
+            this.ClientSize = new System.Drawing.Size(543, 450);
             this.Controls.Add(this.cbbSinhvien);
             this.Controls.Add(this.cbbTieuchi);
             this.Controls.Add(this.label4);
@@ -237,5 +246,6 @@ namespace QLDRL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

@@ -38,9 +38,11 @@ namespace QLDRL
             this.quảnLýSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đánhGiáToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.danhSáchTiêuChíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phiếuĐánhGiáToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchTiêuChíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoThốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thốngKêSinhViênTheoKhóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thốngKêTheoLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,25 +122,42 @@ namespace QLDRL
             this.đánhGiáToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.đánhGiáToolStripMenuItem.Text = "Đánh giá";
             // 
-            // danhSáchTiêuChíToolStripMenuItem
-            // 
-            this.danhSáchTiêuChíToolStripMenuItem.Name = "danhSáchTiêuChíToolStripMenuItem";
-            this.danhSáchTiêuChíToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.danhSáchTiêuChíToolStripMenuItem.Text = "Điểm rèn luyện";
-            this.danhSáchTiêuChíToolStripMenuItem.Click += new System.EventHandler(this.danhSáchTiêuChíToolStripMenuItem_Click);
-            // 
             // phiếuĐánhGiáToolStripMenuItem
             // 
             this.phiếuĐánhGiáToolStripMenuItem.Name = "phiếuĐánhGiáToolStripMenuItem";
-            this.phiếuĐánhGiáToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.phiếuĐánhGiáToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.phiếuĐánhGiáToolStripMenuItem.Text = "Phiếu đánh giá";
             this.phiếuĐánhGiáToolStripMenuItem.Click += new System.EventHandler(this.phiếuĐánhGiáToolStripMenuItem_Click);
             // 
+            // danhSáchTiêuChíToolStripMenuItem
+            // 
+            this.danhSáchTiêuChíToolStripMenuItem.Name = "danhSáchTiêuChíToolStripMenuItem";
+            this.danhSáchTiêuChíToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.danhSáchTiêuChíToolStripMenuItem.Text = "Điểm rèn luyện";
+            this.danhSáchTiêuChíToolStripMenuItem.Click += new System.EventHandler(this.danhSáchTiêuChíToolStripMenuItem_Click);
+            // 
             // báoCáoThốngKêToolStripMenuItem
             // 
+            this.báoCáoThốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thốngKêSinhViênTheoKhóaToolStripMenuItem,
+            this.thốngKêTheoLớpToolStripMenuItem});
             this.báoCáoThốngKêToolStripMenuItem.Name = "báoCáoThốngKêToolStripMenuItem";
             this.báoCáoThốngKêToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.báoCáoThốngKêToolStripMenuItem.Text = "Thống kê";
+            // 
+            // thốngKêSinhViênTheoKhóaToolStripMenuItem
+            // 
+            this.thốngKêSinhViênTheoKhóaToolStripMenuItem.Name = "thốngKêSinhViênTheoKhóaToolStripMenuItem";
+            this.thốngKêSinhViênTheoKhóaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.thốngKêSinhViênTheoKhóaToolStripMenuItem.Text = "Thống kê theo thời gian";
+            this.thốngKêSinhViênTheoKhóaToolStripMenuItem.Click += new System.EventHandler(this.thốngKêSinhViênTheoKhóaToolStripMenuItem_Click);
+            // 
+            // thốngKêTheoLớpToolStripMenuItem
+            // 
+            this.thốngKêTheoLớpToolStripMenuItem.Name = "thốngKêTheoLớpToolStripMenuItem";
+            this.thốngKêTheoLớpToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.thốngKêTheoLớpToolStripMenuItem.Text = "Thống kê theo lớp";
+            this.thốngKêTheoLớpToolStripMenuItem.Click += new System.EventHandler(this.thốngKêTheoLớpToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -177,5 +196,7 @@ namespace QLDRL
         private System.Windows.Forms.ToolStripMenuItem phiếuĐánhGiáToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoCáoThốngKêToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýTàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thốngKêSinhViênTheoKhóaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thốngKêTheoLớpToolStripMenuItem;
     }
 }

@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -42,6 +47,8 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,6 +77,18 @@
     </Compile>
     <Compile Include="DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilterBeforeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilterBeforeReport.Designer.cs">
+      <DependentUpon>FilterBeforeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportSVbyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSVbyLop.Designer.cs">
+      <DependentUpon>frmReportSVbyLop.cs</DependentUpon>
     </Compile>
     <Compile Include="Lop.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -132,6 +151,18 @@
     <Compile Include="QLTaikhoan.Designer.cs">
       <DependentUpon>QLTaikhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptSinhvien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSinhvien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptSinhvienByLop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSinhvienByLop.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Sinhvien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -144,6 +175,12 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ThongkeSinhvientheoKhoahoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongkeSinhvientheoKhoahoc.Designer.cs">
+      <DependentUpon>ThongkeSinhvientheoKhoahoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tieuchi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -152,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterBeforeReport.resx">
+      <DependentUpon>FilterBeforeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSVbyLop.resx">
+      <DependentUpon>frmReportSVbyLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -177,6 +220,17 @@
     <EmbeddedResource Include="QLTaikhoan.resx">
       <DependentUpon>QLTaikhoan.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptSinhvien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSinhvien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptSinhvienByLop.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSinhvienByLop.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongkeSinhvientheoKhoahoc.resx">
+      <DependentUpon>ThongkeSinhvientheoKhoahoc.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -214,6 +268,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

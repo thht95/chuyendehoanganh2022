@@ -32,7 +32,7 @@ namespace QLDRL
                 Danhgia danhgia = new Danhgia();
                 danhgia.TieuchiID = Convert.ToInt32(cbbTieuchi.SelectedValue);
                 danhgia.SinhvienID = Convert.ToInt32(cbbSinhvien.SelectedValue);
-                danhgia.Ngaydanhgia = new DateTime();
+                danhgia.Ngaydanhgia = DateTime.Now;
                 danhgia.Diemdanhgia = Convert.ToInt32(txtSodiem.Text);
 
                 context.Danhgias.Add(danhgia);

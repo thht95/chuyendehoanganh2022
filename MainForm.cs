@@ -67,7 +67,7 @@ namespace QLDRL
         {
             if (e.KeyCode == Keys.F1)
             {
-                QLBanDanhgia form = new QLBanDanhgia();
+                ThongkeSinhvientheoKhoahoc form = new ThongkeSinhvientheoKhoahoc();
                 form.MdiParent = this;
                 form.Show();
             }
@@ -83,6 +83,22 @@ namespace QLDRL
         private void danhSáchTiêuChíToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QLBanDanhgia form = new QLBanDanhgia();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void thốngKêSinhViênTheoKhóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FilterBeforeReport.type = "time";
+            FilterBeforeReport form = new FilterBeforeReport();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void thốngKêTheoLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FilterBeforeReport.type = "Lop";
+            FilterBeforeReport form = new FilterBeforeReport();
             form.MdiParent = this;
             form.Show();
         }
