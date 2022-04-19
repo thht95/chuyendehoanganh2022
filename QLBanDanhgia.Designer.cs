@@ -50,6 +50,7 @@ namespace QLDRL
             this.label6 = new System.Windows.Forms.Label();
             this.lblDanhgia = new System.Windows.Forms.Label();
             this.lblSodiem = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,11 +242,23 @@ namespace QLDRL
             this.lblSodiem.Size = new System.Drawing.Size(0, 13);
             this.lblSodiem.TabIndex = 85;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(348, 182);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(165, 17);
+            this.checkBox1.TabIndex = 86;
+            this.checkBox1.Text = "Lọc dữ liệu trong vòng 1 tuần";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // QLBanDanhgia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 450);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lblSodiem);
             this.Controls.Add(this.lblDanhgia);
             this.Controls.Add(this.label6);
@@ -293,5 +306,6 @@ namespace QLDRL
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblDanhgia;
         private System.Windows.Forms.Label lblSodiem;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

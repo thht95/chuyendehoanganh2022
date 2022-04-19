@@ -169,5 +169,25 @@ namespace QLDRL
                 }
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                reload();
+            }
+            else
+            {
+                var newDate = DateTime.Today.AddDays(-7);
+                if (MainForm.isAdmin)
+                    dgv.DataSource = context.Danhgias.Where(x => x.Ngaydanhgia > newDate).ToList();
+                else
+                {
+                    var lopIds = context.Lops.Where(x => x.GVCN_ID == MainForm.id).Select(x => x.ID).ToList();
+                    var sinhvienIds = context.Sinhviens.Where(x => lopIds.Contains(x.LopID)).Select(x => x.ID).ToList();
+                    dgv.DataSource = context.Danhgias.Where(x => sinhvienIds.Contains((int)x.SinhvienID) && x.Ngaydanhgia > newDate).ToList();
+                }
+            }
+        }
     }
 }
