@@ -32,7 +32,7 @@ namespace QLDRL
                 Danhgia danhgia = new Danhgia();
                 danhgia.TieuchiID = Convert.ToInt32(cbbTieuchi.SelectedValue);
                 danhgia.SinhvienID = Convert.ToInt32(cbbSinhvien.SelectedValue);
-                danhgia.Ngaydanhgia = DateTime.Now;
+                danhgia.Ngaydanhgia = DateTime.Today;
                 danhgia.Diemdanhgia = Convert.ToInt32(txtSodiem.Text);
 
                 context.Danhgias.Add(danhgia);
@@ -58,7 +58,7 @@ namespace QLDRL
                     Danhgia danhgia = context.Danhgias.FirstOrDefault(x => x.ID == id);
                     danhgia.TieuchiID = Convert.ToInt32(cbbTieuchi.SelectedValue);
                     danhgia.SinhvienID = Convert.ToInt32(cbbSinhvien.SelectedValue);
-                    danhgia.Ngaydanhgia = new DateTime();
+                    danhgia.Ngaydanhgia = DateTime.Today;
                     danhgia.Diemdanhgia = Convert.ToInt32(txtSodiem.Text);
 
                     context.SaveChanges();
@@ -126,6 +126,26 @@ namespace QLDRL
                 cbbTieuchi.SelectedValue = dgv[1, e.RowIndex].Value;
                 cbbSinhvien.SelectedValue = dgv[2, e.RowIndex].Value;
                 txtSodiem.Text = dgv[3, e.RowIndex].Value.ToString();
+                //MessageBox.Show(dgv[4, e.RowIndex].Value.ToString());
+
+                int svid = Convert.ToInt32(dgv[2, e.RowIndex].Value);
+                DateTime date = Convert.ToDateTime(dgv[4, e.RowIndex].Value);
+                var data = context.Danhgias.Where(x => x.SinhvienID == svid && x.Ngaydanhgia == date).ToList();
+                var sodiem = data.Sum(x => x.Diemdanhgia);
+                lblSodiem.Text = sodiem.ToString();
+                if (sodiem >= 90)
+                    lblDanhgia.Text = "Xuất sắc";
+                else if (sodiem >= 80)
+                    lblDanhgia.Text = "Tốt";
+                else if (sodiem >= 65)
+                    lblDanhgia.Text = "Khá";
+                else if (sodiem > 50)
+                    lblDanhgia.Text = "Trung bình";
+                else if (sodiem > 35)
+                    lblDanhgia.Text = "Yếu";
+                else
+                    lblDanhgia.Text = "Kém";
+
             }
         }
 

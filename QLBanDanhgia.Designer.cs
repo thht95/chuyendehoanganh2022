@@ -30,6 +30,11 @@ namespace QLDRL
         private void InitializeComponent()
         {
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSodiem = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
@@ -41,11 +46,10 @@ namespace QLDRL
             this.label4 = new System.Windows.Forms.Label();
             this.cbbTieuchi = new System.Windows.Forms.ComboBox();
             this.cbbSinhvien = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblDanhgia = new System.Windows.Forms.Label();
+            this.lblSodiem = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +72,43 @@ namespace QLDRL
             this.dgv.TabIndex = 77;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             this.dgv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_CellFormatting);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TieuchiID";
+            this.Column2.HeaderText = "Tiêu chí";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SinhvienID";
+            this.Column4.HeaderText = "Sinh viên";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Diemdanhgia";
+            this.Column3.HeaderText = "Số điểm";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Ngaydanhgia";
+            this.Column5.HeaderText = "Thời gian đánh giá";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // txtSodiem
             // 
@@ -95,7 +136,7 @@ namespace QLDRL
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(383, 144);
+            this.btnXoa.Location = new System.Drawing.Point(431, 132);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(82, 39);
             this.btnXoa.TabIndex = 73;
@@ -105,7 +146,7 @@ namespace QLDRL
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(383, 87);
+            this.btnSua.Location = new System.Drawing.Point(431, 75);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(82, 39);
             this.btnSua.TabIndex = 72;
@@ -115,7 +156,7 @@ namespace QLDRL
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(383, 30);
+            this.btnThem.Location = new System.Drawing.Point(431, 18);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(82, 39);
             this.btnThem.TabIndex = 71;
@@ -166,48 +207,49 @@ namespace QLDRL
             this.cbbSinhvien.Size = new System.Drawing.Size(121, 21);
             this.cbbSinhvien.TabIndex = 81;
             // 
-            // Column1
+            // label5
             // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 50;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(303, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.TabIndex = 82;
+            this.label5.Text = "Số điểm";
             // 
-            // Column2
+            // label6
             // 
-            this.Column2.DataPropertyName = "TieuchiID";
-            this.Column2.HeaderText = "Tiêu chí";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(303, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.TabIndex = 83;
+            this.label6.Text = "Đánh giá";
             // 
-            // Column4
+            // lblDanhgia
             // 
-            this.Column4.DataPropertyName = "SinhvienID";
-            this.Column4.HeaderText = "Sinh viên";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.lblDanhgia.AutoSize = true;
+            this.lblDanhgia.Location = new System.Drawing.Point(355, 53);
+            this.lblDanhgia.Name = "lblDanhgia";
+            this.lblDanhgia.Size = new System.Drawing.Size(0, 13);
+            this.lblDanhgia.TabIndex = 84;
             // 
-            // Column3
+            // lblSodiem
             // 
-            this.Column3.DataPropertyName = "Diemdanhgia";
-            this.Column3.HeaderText = "Số điểm";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Ngaydanhgia";
-            this.Column5.HeaderText = "Thời gian đánh giá";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.lblSodiem.AutoSize = true;
+            this.lblSodiem.Location = new System.Drawing.Point(355, 30);
+            this.lblSodiem.Name = "lblSodiem";
+            this.lblSodiem.Size = new System.Drawing.Size(0, 13);
+            this.lblSodiem.TabIndex = 85;
             // 
             // QLBanDanhgia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 450);
+            this.Controls.Add(this.lblSodiem);
+            this.Controls.Add(this.lblDanhgia);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cbbSinhvien);
             this.Controls.Add(this.cbbTieuchi);
             this.Controls.Add(this.label4);
@@ -247,5 +289,9 @@ namespace QLDRL
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblDanhgia;
+        private System.Windows.Forms.Label lblSodiem;
     }
 }
